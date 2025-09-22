@@ -46,8 +46,10 @@ uvicorn app.main:app --reload
 ```
 
 ## Swagger / OpenAPI Docs
+```
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
+```
 
 ## 2. Core Settings (env & DI) — app/core/config.py
 centralizes environment variables and app metadata.
