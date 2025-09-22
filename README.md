@@ -69,6 +69,9 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     ENV_: str | None = None  # optional
 
+    # CORS origins
+        CORS_ORIGINS: str | None = None
+
     # Pydantic v2 style config
     model_config = SettingsConfigDict(
         env_file=".env",

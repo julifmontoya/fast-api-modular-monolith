@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.ticket.schemas import TicketCreate, TicketOut, TicketUpdate
 from app.ticket import services as ticket_service
-from app.core.config import get_settings,Settings
+from app.core.config import get_settings, Settings
 router = APIRouter(prefix="/tickets", tags=["Tickets"])
 
 
@@ -15,13 +15,16 @@ def env(settings: Settings = Depends(get_settings)):
         "secret_key": settings.ENV_,  # (don’t expose secrets in real apps)
     }
 
+
 @router.post("/", response_model=TicketOut, status_code=201)
 def create(ticket: TicketCreate, db: Session = Depends(get_db)):
     return ticket_service.create_ticket(db, ticket)
 
+
 @router.get("/", response_model=list[TicketOut])
 def list_all(
-    status: str | None = Query(default=None, description="Filter by status: open or closed"),
+    status: str | None = Query(
+        default=None, description="Filter by status: open or closed"),
     db: Session = Depends(get_db),
 ):
     items = ticket_service.get_all_tickets(db)
