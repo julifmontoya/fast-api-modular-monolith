@@ -6,8 +6,8 @@ from pydantic import Field
 
 class Settings(BaseSettings):
     DATABASE_URL: str = Field(default="sqlite:///./tickets.db")
-    APP_NAME: str = "Smart Issue Tracker API"
-    APP_DESC: str = "A mini ticket system with FastAPI"
+    APP_NAME: str = "Smart API"
+    APP_DESC: str = "A mini system with FastAPI"
     APP_VERSION: str = "1.0.0"
     ENV_: str | None = None  # optional
 
