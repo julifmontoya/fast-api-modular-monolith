@@ -314,13 +314,14 @@ DELETE /tickets/{ticket_id} – Delete a ticket
 ```
 
 ## 7. Tests
-In app/tests/conftest
+In tests/conftest
 ```
 # tests/conftest.py
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 ```
 
+In tests/test_tickets.py
 ```
 # tests/test_tickets.py
 from fastapi.testclient import TestClient
