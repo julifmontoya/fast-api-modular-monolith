@@ -109,14 +109,7 @@ def get_db():
         db.close()
 ```
 
-
-## 4. App Entry —  app/__init__.py
-```
-# app/__init__.py
-__all__ = ["core", "ticket"]
-```
-
-## 5. App Entry (CORS & Routers) — app/main.py
+## 4. App Entry (CORS & Routers) — app/main.py
 builds the app, applies CORS, registers routers, and prepares the DB.
 - CORS belongs here (global), before requests hit routers.
 - Base.metadata.create_all(bind=engine) creates tables for simple demos. In real projects use Alembic migrations.
