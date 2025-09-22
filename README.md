@@ -258,11 +258,11 @@ from app.core.config import get_settings,Settings
 router = APIRouter(prefix="/tickets", tags=["Tickets"])
 
 
-@router.get("/papo")
-def papo(settings: Settings = Depends(get_settings)):
+@router.get("/env")
+def env(settings: Settings = Depends(get_settings)):
     return {
         "message": "Hello from /test route!",
-        "secret_key": settings.MONEX_API_CLIENT,  # (don’t expose secrets in real apps)
+        "secret_key": settings.ENV_,  # (don’t expose secrets in real apps)
     }
 
 @router.post("/", response_model=TicketOut, status_code=201)
