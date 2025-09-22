@@ -30,6 +30,8 @@ uvicorn
 sqlalchemy
 pydantic
 pydantic-settings
+pytest
+httpx
 ```
 
 ```
